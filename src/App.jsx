@@ -8,7 +8,7 @@ import DisplayBoats from "./components/DisplayBoats";
 import { BOARD_SIZE, setBoatsOnBoard, getIndexBoatbyPosition } from "./utils";
 import "./App.css";
 
-const MAX_ATTEMTS = 100;
+const MAX_ATTEMTS = 80;
 const boatsSizes = [4, 3, 3, 2, 2, 2, 1, 1, 1, 1];
 
 let timer = null;
