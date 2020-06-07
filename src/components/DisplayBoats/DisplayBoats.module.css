@@ -1,0 +1,17 @@
+.container {
+  padding: 20px;
+}
+.boat {
+  display: flex;
+  margin-bottom: 10px;
+}
+.position {
+  width: 15px;
+  height: 15px;
+  background: #bdbdbd;
+  border-right: 1px solid #2c2d2d;
+}
+
+.destroy {
+  background-color: #9e3343;
+}

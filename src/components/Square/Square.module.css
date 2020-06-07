@@ -1,0 +1,21 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-bg-color);
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.hit {
+  background-color: var(--red-color);
+  cursor: unset;
+}
+
+.miss {
+  background-color: var(--light-grey-color);
+  cursor: unset;
+}

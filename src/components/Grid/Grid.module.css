@@ -1,0 +1,60 @@
+.Grid {
+  counter-reset: rows;
+
+  width: 500px;
+  box-sizing: border-box;
+  height: 500px;
+  border: solid 3px var(--app-bg-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.Row {
+  counter-reset: columms;
+
+  width: 100%;
+  border-bottom: 3px solid var(--app-bg-color);
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  position: relative;
+}
+
+.Row:last-child {
+  border-bottom: 0px;
+}
+
+.Row:first-child .Row-item::after {
+  counter-increment: columms;
+  content: counter(columms);
+  top: -30px;
+}
+
+.Row-item:first-child::before {
+  counter-increment: rows;
+  content: counter(rows, lower-alpha);
+  left: -30px;
+}
+
+.Row-item:first-child::before,
+.Row:first-child .Row-item::after {
+  text-align: center;
+  color: #5a5a5a;
+  font-family: "Share Tech Mono", monospace;
+  text-transform: uppercase;
+  font-size: 14px;
+  width: 20px;
+  position: absolute;
+}
+
+.Row-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border-right: 3px solid var(--app-bg-color);
+}
+
+.Row-item:last-child {
+  border-right: 0px;
+}

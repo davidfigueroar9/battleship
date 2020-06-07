@@ -1,0 +1,12 @@
+.panel {
+  height: 494px;
+  width: 200px;
+  background-color: #292726;
+  display: flex;
+  margin-top: 3px;
+  margin-left: 50px;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+}
