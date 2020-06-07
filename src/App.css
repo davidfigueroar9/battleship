@@ -5,6 +5,7 @@
   border-left: 1px solid #343434;
   border-right: 1px solid #343434;
   max-width: 1200px;
+  min-width: 800px;
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
