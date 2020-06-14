@@ -1,4 +1,4 @@
-export const BOARD_SIZE = 10;
+export const BOARD_SIZE = 15;
 
 export function randomInt(min, max) {
   return min + Math.floor((max - min) * Math.random());

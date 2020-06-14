@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styles from "./DisplayBoats.module.css";
 
 const DisplayBoats = ({ boats }) => (
@@ -6,9 +7,10 @@ const DisplayBoats = ({ boats }) => (
     {boats.map((boat, index) => {
       const isDestroy = boat.every((b) => b.hit);
       return (
-        <div className={styles.boat}>
+        <div className={styles.boat} key={`boats-${index}`}>
           {boat.map((p) => (
             <div
+              key={`boat-${p.x}-${p.y}`}
               className={`${styles.position} ${
                 isDestroy ? styles.destroy : ""
               } `}
@@ -19,5 +21,17 @@ const DisplayBoats = ({ boats }) => (
     })}
   </div>
 );
+
+DisplayBoats.propTypes = {
+  boats: PropTypes.arrayOf(
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        x: PropTypes.number,
+        y: PropTypes.number,
+        hit: PropTypes.bool,
+      })
+    )
+  ),
+};
 
 export default DisplayBoats;

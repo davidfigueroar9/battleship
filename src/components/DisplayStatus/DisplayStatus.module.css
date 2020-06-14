@@ -1,0 +1,31 @@
+.status {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  text-transform: uppercase;
+}
+
+.gameover {
+  font-size: 12px;
+}
+
+.gameoverMessage {
+  font-size: 22px;
+  margin: 10px 0px;
+}
+
+.restart {
+  padding: 5px 20px;
+  background-color: #bdbdbd;
+  color: #292726;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.restart:hover {
+  background-color: #909090;
+}

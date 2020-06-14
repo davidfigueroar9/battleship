@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import { GridContext } from "../GridContext";
 import styles from "./Square.module.css";
 
@@ -15,6 +16,13 @@ const Square = ({ position }) => {
     }
   };
   return <div className={className} onClick={handleClick}></div>;
+};
+
+Square.propTypes = {
+  position: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number,
+  }).isRequired,
 };
 
 export default Square;

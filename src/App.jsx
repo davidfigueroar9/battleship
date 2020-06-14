@@ -5,6 +5,7 @@ import LayoutGame from "./components/LayoutGame";
 import Message from "./components/Message";
 import MisileCount from "./components/MisileCount";
 import DisplayBoats from "./components/DisplayBoats";
+import DisplayStatus from "./components/DisplayStatus";
 import { BOARD_SIZE, setBoatsOnBoard, getIndexBoatbyPosition } from "./utils";
 import "./App.css";
 
@@ -13,7 +14,7 @@ const boatsSizes = [4, 3, 3, 2, 2, 2, 1, 1, 1, 1];
 
 let timer = null;
 
-function App() {
+export function App() {
   const [attempts, setAttempt] = useState([]);
   const [message, setMessage] = useState("");
   const [boats, setBoats] = useState(setBoatsOnBoard(boatsSizes, BOARD_SIZE));
@@ -110,19 +111,11 @@ function App() {
     <div className="App">
       <div className="header">
         <div className="logo">BATTLESHIP</div>
-        <div className="status">
-          {gameOver && <div className="gameover">Game Over</div>}
-          {gameOver && (
-            <div className="gameover-message">
-              {win ? "YOU WIN" : "YOU LOST"}
-            </div>
-          )}
-          {gameOver && (
-            <div onClick={restartGame} className="restart">
-              Play again
-            </div>
-          )}
-        </div>
+        <DisplayStatus
+          win={win}
+          restartGame={restartGame}
+          gameOver={gameOver}
+        />
       </div>
 
       <LayoutGame

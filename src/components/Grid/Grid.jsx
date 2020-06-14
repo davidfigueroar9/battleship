@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+import PropTypes from "prop-types";
 import Square from "../Square";
 import styles from "./Grid.module.css";
 
@@ -22,6 +23,11 @@ const Grid = ({ rows, columms }) => {
       })}
     </div>
   );
+};
+
+Grid.propTypes = {
+  rows: PropTypes.number.isRequired,
+  columms: PropTypes.number.isRequired,
 };
 
 export default memo(Grid);
