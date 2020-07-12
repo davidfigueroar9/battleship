@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BOARD_SIZE, setBoatsOnBoard, getIndexBoatbyPosition } from "./utils";
 
 const maxAttempsDefault = 80;
-const boatsSizesDefault = [4, 3, 3, 2, 2, 2, 1, 1, 1, 1];
+const boatsSizesDefault = [5, 4, 4, 3, 3, 3, 2, 2];
 
 let timer = null;
 
@@ -10,10 +10,11 @@ function useBattleship(config = {}) {
   const {
     boatsSizes = boatsSizesDefault,
     maxAttemps = maxAttempsDefault,
+    boardSize = BOARD_SIZE,
   } = config;
   const [attempts, setAttempt] = useState([]);
   const [message, setMessage] = useState("");
-  const [boats, setBoats] = useState(setBoatsOnBoard(boatsSizes, BOARD_SIZE));
+  const [boats, setBoats] = useState(setBoatsOnBoard(boatsSizes, boardSize));
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
 
@@ -22,7 +23,7 @@ function useBattleship(config = {}) {
     setMessage("");
     setGameOver(false);
     setWin(false);
-    setBoats(setBoatsOnBoard(boatsSizes, BOARD_SIZE));
+    setBoats(setBoatsOnBoard(boatsSizes, boardSize));
   };
 
   const getDataByPosition = (position) => {
